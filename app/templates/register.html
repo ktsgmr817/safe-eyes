@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    ユーザー登録 -
+{% endblock %}
+
+{% block main %}
+    <div class="subscribe-wrapper">
+      <p>ユーザー登録</p>
+    </div>
+    <form action="/register" method="post">
+      <div class="form-group">
+        <label for="name">ユーザー名</label>
+        <input autocomplete="off" autofocus class="form-control" name="name" type="text" id="name">
+      </div>
+      <div class="form-group">
+        <label for="email">メール</label>
+        <input class="form-control" name="email" type="email" id="email">
+      </div>
+      <div class="form-group">
+        <label for="password">パスワード</label>
+        <input class="form-control" name="password" type="password" id="password">
+      </div>
+      <div class="form-group">
+        <label for="confirmation">パスワード(確認用)</label>
+        <input class="form-control" name="confirmation" type="password" id="confirmation">
+      </div>
+      <input class="button submit" type="submit" value="登録する">
+      </form>
+{% endblock %}

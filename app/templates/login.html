@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    ログイン -
+{% endblock %}
+
+{% block main %}
+    <form action="/login" method="post">
+      <div class="form-group">
+        <label for="email">メール</label>
+        <input class="form-control" name="email" type="email" id="email">
+      </div>
+      <div class="form-group">
+        <label for="password">パスワード</label>
+        <input class="form-control" name="password" type="password" id="password">
+      </div>
+      <input class="button submit" type="submit" value="登録する">
+    </form>
+{% endblock %}

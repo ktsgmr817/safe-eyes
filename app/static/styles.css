@@ -1,0 +1,114 @@
+p {
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.button {
+  margin-bottom: 30px;
+}
+
+.flash {
+  font-size: 17px;
+  text-align: center;
+  background-color: #e25336;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 9px 0;
+}
+
+.title {
+  font-size: 52px;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.main {
+  margin: 0 33px;
+}
+
+.signup {
+  background-color: #59C2D0;
+  text-align: center;
+  border-radius: 70px;
+  padding: 0.7em 0;
+  font-size: 23px;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+
+.index-top {
+  margin: 12px 0;
+}
+
+.signup a{
+  color: #ffffff;
+  display: block;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  width /***/:auto;
+  margin: 43px 0;
+}
+
+.subscribe-wrapper {
+  font-size: 30px;
+  font-weight: bold;
+  color: #707070;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.form-control {
+  height: calc(1.5em + .75rem + 9px)!important;
+}
+
+.form-group label, .contact-type {
+  color: #707070;
+  font-size: 18px;
+}
+
+.type-wrapper {
+  margin: 37px 0 20px;
+}
+
+.radio {
+  margin-bottom: 0!important;
+}
+
+.submit {
+  background-color: #59C2D0;
+  border-radius: 70px;
+  padding: 0.7em 0;
+  font-size: 23px;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  margin: 30px 0;
+}
+
+.done {
+  font-size: 22px;
+  margin: 75px 0;
+}
+
+@media only screen and (min-width:540px) {
+  .index-top {
+    text-align: center;
+  }
+
+  .done {
+    text-align: center;
+  }
+}
