@@ -80,7 +80,7 @@ def send_gmail():
 
     sender = SENDER_GMAIL
     subject = '本日はコンタクトの交換日です'
-    message_text = '本日はコンタクトの交換日です。今日も1日お疲れ様でした。'
+    message_text = '本日はコンタクトの交換日です。\n今日も1日お疲れ様でした。\n登録削除はこちらから↓\nhttps://safe-eyes.jp/delete'
 
     # 今日が交換日のユーザーにメールを送信
     for to in email_list:
@@ -202,10 +202,45 @@ def contact():
 
     return render_template("contact.html")
 
+@application.route("/delete", methods=("GET", "POST"))
+def delete():
+    if request.method == "POST":
+        email = request.form.get("email")
+        password = request.form.get("password")
+        error = None
+        user = User.query.filter_by(email=email).first()
+
+        if not email:
+            error = "メールアドレスを入力してください。"
+        elif not password:
+            error = "パスワードを入力してください。"
+        elif not user:
+            error = "メールアドレスが正しくありません。"
+        elif not check_password_hash(user.hashed_password, password):
+            error = "パスワードが正しくありません。"
+
+        if not error:
+            user_id = user.id
+            contact = Contact.query.filter_by(user_id=user_id).first()
+            db_session.delete(user)
+            db_session.delete(contact)
+            db_session.commit()
+            flash("登録が削除されました。")
+            return redirect("/")
+
+        flash(error)
+
+    return render_template("delete.html")
+
 
 @application.route('/<path:path>')
 def free_path(path):
     return redirect("/")
+    
+
+@application.route("/favicon.ico")
+def favicon():
+    return application.send_static_file("favicon.ico")
 
 
 if __name__ == "__main__":
